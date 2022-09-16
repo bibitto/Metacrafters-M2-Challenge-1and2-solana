@@ -11,8 +11,8 @@ const getWalletBalance = async () => {
     const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
     const walletBalance = await connection.getBalance(new PublicKey(publicKey));
     console.log(`Wallet balance: ${parseInt(walletBalance) / LAMPORTS_PER_SOL} SOL`);
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -25,8 +25,8 @@ const airDropSol = async () => {
     );
     await connection.confirmTransaction(fromAirDropSignature);
     console.log('Airdropping 2 SOL to ', publicKey);
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 };
 
